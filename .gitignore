@@ -1,0 +1,9 @@
+# Terraform
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+.terraform
+
+# Pycache
+__pycache__/
+**/package
