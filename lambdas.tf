@@ -22,7 +22,7 @@ data "archive_file" "lambda_on" {
 }
 
 resource "aws_lambda_function" "lambda_on" {
-  function_name    = "${var.project-name}-on"
+  function_name    = "${var.project_name}-on"
   handler          = var.lambda_handler
   role             = aws_iam_role.lambda.arn
   runtime          = var.lambda_python_runtime
@@ -58,7 +58,7 @@ data "archive_file" "lambda_off" {
 }
 
 resource "aws_lambda_function" "lambda_off" {
-  function_name    = "${var.project-name}-off"
+  function_name    = "${var.project_name}-off"
   handler          = var.lambda_handler
   role             = aws_iam_role.lambda.arn
   runtime          = var.lambda_python_runtime
@@ -75,7 +75,7 @@ resource "aws_lambda_function" "lambda_off" {
 
 # Q: which policy way is better? POLICY vs. jsonencode()
 resource "aws_iam_role" "lambda" {
-   name = "${var.project-name}-lambda-role"
+   name = "${var.project_name}-lambda-role"
 
    assume_role_policy = <<POLICY
 {
@@ -95,7 +95,7 @@ POLICY
 }
 
 resource "aws_iam_role_policy" "ec2_allow" {
-  name = "CloudGamerRigLambdaAutomation"
+  name = "EC2SwitchLambdaAutomation"
   role = aws_iam_role.lambda.id
 
   # Terraform's "jsonencode" function converts a

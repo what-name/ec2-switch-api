@@ -1,11 +1,9 @@
-variable "project-name" {
+variable "project_name" {
   description = "Prefix for the deployed resources"
-  default     = "cloud-gamer-automation"
 }
 
 variable "region" {
   description = "The AWS region"
-  default     = "eu-central-1"
 }
 
 variable "lambda_python_runtime" {
