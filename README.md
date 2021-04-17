@@ -9,7 +9,7 @@ This repository is a Terraform IaC template that deploys the following resources
 # Usage
 This provides an API GW Endpoint on a `development` stage with two paths, `turn_on` and `turn_off`. `turn_on` turns the specified instance off, the same goes for `turn_off`. The endpoint is restricted with a Usage Plan to an API key and basic rate limiting. The API key can be retrieved from the console after deployment. Terraform will `output` the stage's URL as well. 
 
-Terraform will package the Lambda Python code using a bash script.
+Terraform will package the Lambda Python code using a bash script automatically.
 
 # Deployment
 ## Prerequisites
@@ -21,6 +21,6 @@ Terraform will package the Lambda Python code using a bash script.
 
 1. Clone this repository
 2. `terraform init`
-3. Change the `instance_id` variable to your target instance's Id.
+3. Change the values in `switch.auto.tfvars` to your needs.
 4. `terraform plan`
 5. `terraform apply`
